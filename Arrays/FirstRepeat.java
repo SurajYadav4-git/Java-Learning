@@ -1,4 +1,4 @@
-// find first repeated elementin Array 
+// find first repeated element in Array 
 import java.util.*;
 class FirstRepeat{
 
