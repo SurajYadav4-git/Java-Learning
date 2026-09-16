@@ -1,5 +1,4 @@
-// Online Java Compiler
-// Use this editor to write, compile and run your Java code online
+//Rotate the given array by k steps without using extra space,where k is non negative
 import java.util.*;
 class Rotate {
 
