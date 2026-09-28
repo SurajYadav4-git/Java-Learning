@@ -1,4 +1,4 @@
-//Rotate the given array by k steps without using extra space,where k is non negative
+
 import java.util.*;
 class Rotate {
 
@@ -9,6 +9,7 @@ class Rotate {
         System.out.println();
     }
     
+ //Rotate the given array by k steps ,where k is non negative
     static int[] rotatearray(int arr[], int k){
         int n=arr.length;
         k=k%n;
@@ -23,6 +24,34 @@ class Rotate {
         }
         return ans;
     }
+
+// Roatate array without using extra space
+
+static void swap(int arr[],int i,int j){
+        int temp= arr[i];
+        arr[i]= arr[j];
+        arr[j]= temp;
+     }
+
+   static void reverse(int arr[], int i, int j){
+      while(i<j){
+                 swap(arr,i,j);
+                 i++;
+                 j--;
+        
+                 }       
+        }
+
+  
+   static void rotateinplace(int arr[],int k){
+    int n=arr.length;
+     k = k%n;
+    reverse(arr,0,n-k-1);
+    reverse(arr,n-k,n-1);
+    reverse(arr,0,n-1);
+   }
+
+
 
     public static void main(String[] args) {
         Scanner sc= new Scanner(System.in);
@@ -42,10 +71,15 @@ class Rotate {
          System.out.println("Original array");
           printarray(arr);
 
-        int ans[]=rotatearray(arr,k);
+       /* int ans[]=rotatearray(arr,k);
         
          System.out.println("Array after rotation");
-          printarray(ans);
+          printarray(ans); */
+
+          rotateinplace(arr,k);
+        
+         System.out.println("Array after rotation");
+          printarray(arr);
 
     }
 }
