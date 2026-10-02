@@ -1,7 +1,8 @@
-//Sort the given array of 0  and 1 in ascending order  
+//Sort the given array of 0 and 1 in ascending order  
 
 import  java.util.*;
 public class SortZeroesAndOnes{
+
 
     public static void printarray(int arr[]){
         int n = arr.length;
@@ -11,8 +12,14 @@ public class SortZeroesAndOnes{
         System.out.println();
     }
     
+    public static void swap(int arr[],int a,int b){
+        int temp = arr[a];
+        arr[a]=arr[b];
+       arr[b]= temp;
+    }
 
-
+// normal approach 
+/*
 public static void SortZeroesAndOnes(int arr[]){
     int n = arr.length;
     int zeroes= 0;
@@ -29,6 +36,28 @@ public static void SortZeroesAndOnes(int arr[]){
             arr[i]=1;
         }
         
+    }
+}
+*/
+
+// Two pointer Approach
+
+public static void SortZeroesAndOnes(int arr[]){
+    int n=arr.length;
+    int left=0, right=n-1;
+    while(left<right){
+
+        if(arr[left]==1 && arr[right]==0){
+            swap(arr,left,right);
+            left++;
+            right--;
+        }
+        if(arr[left]==0){
+            left++;
+        }
+        if(arr[right]==1){
+            right--;
+        }
     }
 }
 
