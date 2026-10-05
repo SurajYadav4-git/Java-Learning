@@ -33,7 +33,7 @@ public class SortSquare{
         int ans[]= new int[n];
         int k=0;
         while(left<=right){
-        if(Math.abs(arr[left]) >= Math.abs(arr[right])){
+        if(Math.abs(arr[left]) > Math.abs(arr[right])){
             ans[k++]= arr[left]*arr[left];
             left++;
         }else{
